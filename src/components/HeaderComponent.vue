@@ -9,7 +9,9 @@
         <li><router-link to="/galeria" active-class="active">Galeria</router-link></li>
         <li><a href="" active-class="active">Quien es</a></li>
         <li><router-link to="/acercade" active-class="active">A cerca de</router-link></li>
-        <li><a href="">Canciones / videos</a></li>
+        <li><router-link to="/canciones">Canciones / videos</router-link></li>
+        <li><router-link to="/pagina/yuliana lara">Prueba Yuli</router-link></li>
+        <li><router-link :to="{name: 'pagina', params: { id: 'Georgina Gomez Parametro' }}">Prueba Geo</router-link></li>
       </ul>
     </nav>
   </div>

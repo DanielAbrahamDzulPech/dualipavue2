@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Slider texto="Galeria" home="true"/>
         <p>Galeria</p>
         <div id="imagenesDiv">
             <div v-for="imagen in imagenes" :key="imagen.index">
@@ -11,10 +12,12 @@
 </template>
 <script>
 import CardImage from '@/components/galeria/CardImage.vue';
+import Slider from '@/components/Slider.vue';
 export default {
     name: 'GaleriaView',
     components: {
         CardImage,
+        Slider,
     },
     data() {
         return {

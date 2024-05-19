@@ -1,0 +1,27 @@
+#canciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#canciones > div {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    align-items: center;
+    width: 250px;
+    height: 450px;
+    object-fit: contain;
+}
+
+#canciones > div img {
+    width: 100%;
+    height: 100%;
+}
+
+.yeargreen {
+    color: green;
+}
+
+.yearred {
+    color: red;
+}

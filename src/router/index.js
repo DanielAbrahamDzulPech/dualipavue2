@@ -5,7 +5,9 @@ import GaleriaView from '../views/GaleriaView.vue'
 import InicioView from '../views/InicioView.vue'
 // import MainComponent from '../components/MainComponent.vue';
 import AcercaDe from '../components/AcercaDe.vue';
+import Pagina from '../components/Pagina.vue';
 import ErrorComponent from '@/components/ErrorComponent.vue'
+import Canciones from '@/components/Canciones.vue'
 // import { component } from 'vue/types/umd'
 // import { component } from 'vue/types/umd';
 
@@ -29,6 +31,18 @@ const routes = [
     path: '/home',
     name: 'inicio',
     component: InicioView
+  },
+  {
+    path: '/pagina/:id',
+    // opcional parametros
+    // path: '/pagina/:id?',
+    name: 'pagina',
+    component: Pagina,
+  },
+  {
+    path: '/canciones',
+    name: 'canciones',
+    component: Canciones,
   },
   {
     path: '/acercade',

@@ -12,6 +12,7 @@
         <li><router-link to="/canciones">Canciones / videos</router-link></li>
         <li><router-link to="/pagina/yuliana lara">Prueba Yuli</router-link></li>
         <li><router-link :to="{name: 'pagina', params: { id: 'Georgina Gomez Parametro' }}">Prueba Geo</router-link></li>
+        <li><router-link :to="{name: 'formulario'}">Formulario</router-link></li>
       </ul>
     </nav>
   </div>

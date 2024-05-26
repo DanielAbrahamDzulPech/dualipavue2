@@ -8,6 +8,7 @@ import AcercaDe from '../components/AcercaDe.vue';
 import Pagina from '../components/Pagina.vue';
 import ErrorComponent from '@/components/ErrorComponent.vue'
 import Canciones from '@/components/Canciones.vue'
+import Formulario from '@/components/Formulario.vue'
 // import { component } from 'vue/types/umd'
 // import { component } from 'vue/types/umd';
 
@@ -53,6 +54,11 @@ const routes = [
     path: '/galeria',
     name: 'galeria',
     component: GaleriaView
+  },
+  {
+    path: "/formulario",
+    name: "formulario",
+    component: Formulario
   },
   {
     path: '*',

@@ -18,18 +18,24 @@
             </article> -->
 
             <!--esto es parte de los componentes separados-->
-            <div v-for="cancion in canciones" :key="cancion.titulo">
+            <!-- <div v-for="cancion in canciones" :key="cancion.titulo"> -->
+            <div v-for="cancion in cancionesMayusculas" :key="cancion.titulo">
                 <Cancion :cancion="cancion" @favorita="haLlegadoLaCancionFavorita"/>
                 <!-- <Cancion :cancion="cancion" v-on:favorita="haLlegadoLaCancionFavorita"/> -->
             </div>
         </div>
         <div class="favorita" v-if="favorita">
-            <h2>{{ favorita.titulo }}</h2>
+            <h2>La cancion marcada es: {{ favorita.titulo }}</h2>
         </div>
         
         <pre>
             {{ fav }}
         </pre>
+        <div class="mis-datos" v-if="misDatos">
+            {{ misDatos }}
+            {{ misDatos | mayusculas | concatenaYear('ESTE ES EL MEJOR AÑÓ') }}
+            <p v-html="misDatos"></p>
+        </div>
     </div>
 </template>
 <script>
@@ -60,6 +66,9 @@ export default {
             ],
             favorita: null,
             fav: [],
+            nombre: "Daniel",
+            apellidos: "Pech",
+            web: 'abrahampechdev.neftlify.app   ',
         }
     },
     methods: {
@@ -79,6 +88,28 @@ export default {
             // } else {
             //     this.fav.push(favorita.micancion.titulo);
             // }
+        }
+    },
+    computed: {
+        cancionesMayusculas() {
+            var cancionesMod = this.canciones;
+            for(var i = 0; i < this.canciones.length; i++){
+                cancionesMod[i].titulo = cancionesMod[i].titulo.toUpperCase();
+            }
+            return cancionesMod;
+        },
+        misDatos() {
+            return this.nombre + ' ' + this.apellidos + '<br/>' + 'Sitio web: ' + this.web;
+        }
+    },
+    filters: {
+        mayusculas(value) {
+            return value.toUpperCase();
+        },
+        concatenaYear(value, message) {
+            var date = new Date();
+
+            return value + ' ' + date.getFullYear() + ' ' + message;
         }
     }
 }
